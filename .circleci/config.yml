@@ -51,6 +51,8 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run: echo ${AWS_REGION}
+      - run: echo CIRCLE_PROJECT_USERNAME
+      - run: echo $(CIRCLE_PROJECT_USERNAME)
 
 workflows:
   version: 2

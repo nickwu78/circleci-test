@@ -50,7 +50,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/repo
-      - run: yarn run publish
+      - run: echo ${AWS_REGION}
 
 workflows:
   version: 2

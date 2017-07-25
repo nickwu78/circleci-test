@@ -53,6 +53,7 @@ jobs:
       - run: echo ${AWS_REGION}
       - run: echo CIRCLE_PROJECT_USERNAME
       - run: echo $(CIRCLE_PROJECT_USERNAME)
+      - run: $(eval echo ${AWS_REGION})
 
 workflows:
   version: 2

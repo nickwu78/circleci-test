@@ -1,6 +1,4 @@
-#!/bin/bash
-AWS_REGION=${AWS_REGION}
-AWS_BUCKET=${AWS_BUCKET}
 TESTKEY=${AWS_ACCESS_KEY_DEPLOY}
-AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY_DEPLOY}
 echo $TESTKEY
+echo "Starting the gulpfile"
+node gulpfile.js

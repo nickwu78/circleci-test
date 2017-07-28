@@ -40,18 +40,12 @@ jobs:
   deploy:
     docker:
       - image: circleci/node:7.10
-    environment:
-      - AWS_REGION: ${AWS_REGION}
-      - AWS_BUCKET: ${AWS_BUCKET}
-      - AWS_ACCESS_KEY: ${AWS_ACCESS_KEY_STAGE}
-      - AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY_STAGE}
     working_directory: ~/repo
     steps:
       - checkout
       - attach_workspace:
           at: ~/repo
-      - run: echo 'export AWS_REGION=$AWS_REGION' >> envrc
-      - run: echo "${AWS_REGION}"
+      - run: echo ${AWS_REGION}
 
 workflows:
   version: 2

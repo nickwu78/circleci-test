@@ -45,7 +45,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/repo
-      - run: echo $AWS_ACCESS_KEY
+      - run: echo $TESTKEY
 
 workflows:
   version: 2

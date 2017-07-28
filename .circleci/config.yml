@@ -75,4 +75,4 @@ workflows:
             - deploy-staging
       - deploy-production:
           requires:
-            - hold-production
+            - hold_production

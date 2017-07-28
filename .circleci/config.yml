@@ -37,7 +37,7 @@ jobs:
           paths:
             - "*"
         
-  deploy:
+  deploy-staging:
     docker:
       - image: circleci/node:7.10
     working_directory: ~/repo
@@ -45,8 +45,17 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/repo
-      - run: ./set_deploy_env.sh
-      - run: echo ${TESTKEY}
+      - run: ./staging.sh
+  
+  deploy-production:
+    docker:
+      - image: circleci/node:7.10
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/repo
+      - run: ./deploy.sh
 
 workflows:
   version: 2
@@ -57,6 +66,10 @@ workflows:
           type: approval
           requires:
             - build
-      - deploy:
+      - deploy-staging:
           requires:
-            - build
+            - hold_stage
+      - hold_production:
+          type: approval
+          requires:
+            - deploy-staging

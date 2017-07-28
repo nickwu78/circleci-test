@@ -1,0 +1,5 @@
+#!/bin/bash
+echo ${AWS_REGION}
+echo ${AWS_BUCKET}
+echo ${AWS_ACCESS_KEY_STAGE}
+echo ${AWS_SECRET_ACCESS_KEY_STAGE}

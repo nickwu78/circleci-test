@@ -45,6 +45,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/repo
+      - run: ./set_deploy_env.sh
       - run: echo $TESTKEY
 
 workflows:

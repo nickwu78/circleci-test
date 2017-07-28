@@ -1,1 +1,1 @@
-console.log("Hi, i'm a gulpfile, environment is: " + process.env.NODE_ENV + " key is: " + TESTKEY)
+console.log("Hi, i'm a gulpfile, environment is: " + process.env.NODE_ENV + " key is: " + process.env.TESTKEY)
